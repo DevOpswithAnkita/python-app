@@ -1,0 +1,23 @@
+services:
+  python-app:
+    image: python-app:latest      # Image name
+    build:
+      context: .                  # Build using Dockerfile in current directory
+    container_name: python-app    # Container name
+    ports:
+      - "8000:8000"               # Host:Container port mapping
+    restart: unless-stopped       # Auto-restart unless manually stopped
+
+# -------------------------------
+# Run (build + start container):
+# docker compose up -d --build
+#
+# Check running containers:
+# docker compose ps
+#
+# View logs:
+# docker compose logs -f
+#
+# Stop & remove containers:
+# docker compose down
+# -------------------------------
